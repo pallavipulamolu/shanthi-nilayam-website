@@ -1,0 +1,36 @@
+:root {
+  /* Brand palette */
+  --orange: #e97832;
+  --orange-ink: #b14f17; /* accessible orange for small text on ivory/white */
+  --orange-soft: rgba(233, 120, 50, 0.12);
+  --charcoal: #202321;
+  --ivory: #fff9f1;
+  --beige: #e8e5dc;
+  --white: #ffffff;
+  --muted: #77766f;
+  --text-soft: #54534d; /* body secondary text: AA-contrast cousin of --muted */
+  --line: rgba(32, 35, 33, 0.12);
+  --line-strong: rgba(32, 35, 33, 0.28);
+  --danger: #b3261e;
+
+  --font-serif: 'Playfair Display', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --header-h: 84px;
+  --gutter: clamp(18px, 4vw, 44px);
+  --container: 1240px;
+  --r-sm: 14px;
+  --r-md: 22px;
+  --r-lg: 32px;
+  --r-xl: clamp(28px, 4vw, 56px);
+  --shadow-soft: 0 1px 2px rgba(32, 35, 33, 0.04), 0 12px 32px -12px rgba(32, 35, 33, 0.16);
+  --shadow-lift: 0 2px 4px rgba(32, 35, 33, 0.05), 0 24px 48px -16px rgba(32, 35, 33, 0.28);
+  --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
+  --section-y: clamp(72px, 10vw, 136px);
+}
+
+@media (max-width: 1239px) {
+  :root {
+    --header-h: 76px;
+  }
+}
