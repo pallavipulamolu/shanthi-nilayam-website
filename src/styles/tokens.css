@@ -17,7 +17,7 @@
   --font-brand: 'Montserrat', 'DM Sans', system-ui, sans-serif;
   --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  --header-h: 84px;
+  --header-h: 100px;
   --gutter: clamp(18px, 4vw, 44px);
   --container: 1240px;
   --r-sm: 14px;
@@ -32,6 +32,6 @@
 
 @media (max-width: 1239px) {
   :root {
-    --header-h: 76px;
+    --header-h: 84px;
   }
 }

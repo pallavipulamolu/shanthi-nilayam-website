@@ -1,32 +1,21 @@
-import iconLight from '../../assets/brand/shanthi-nilayam-icon.svg'
-import lockupDark from '../../assets/brand/shanthi-nilayam-logo-horizontal-on-dark.svg'
+import logo from '../../assets/brand/shanthi-nilayam-logo.png'
 import { site } from '../../data/site'
 
-/** Header logo: redesigned dove-and-globe mark with the organisation name. */
+const ALT = 'Shanthi Nilayam Bonakal. Service to humanity is service to God.'
+
+/** Header logo: the complete original Shanthi Nilayam artwork (emblem, name and tagline). */
 export function BrandLogo() {
   return (
     <span className="brand__lockup">
-      <img className="brand__mark" src={iconLight} alt="" width={56} height={56} decoding="async" />
-      <span className="brand__text">
-        <span className="brand__name">SHANTHI NILAYAM</span>
-        <span className="brand__place">BONAKAL</span>
-        <span className="sr-only"> {site.descriptor}</span>
-      </span>
+      <img className="brand__logo" src={logo} alt={ALT} width={1023} height={427} decoding="async" />
+      <span className="sr-only">{site.descriptor}</span>
     </span>
   )
 }
 
-/** Footer logo: full horizontal lockup (mark, name and tagline) for dark backgrounds. */
+/** Footer logo: the same complete original artwork. */
 export function FooterLogo() {
   return (
-    <img
-      className="footer__lockup"
-      src={lockupDark}
-      alt="Shanthi Nilayam Bonakal. Service to humanity is service to God."
-      width={750}
-      height={240}
-      loading="lazy"
-      decoding="async"
-    />
+    <img className="footer__lockup" src={logo} alt={ALT} width={1023} height={427} loading="lazy" decoding="async" />
   )
 }
