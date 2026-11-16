@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { navItems, site } from '../../data/site'
 import { useScrolled } from '../../hooks/useScrolled'
-import { BrandMark } from './BrandMark'
+import { BrandLogo } from './BrandLogo'
 import { Button } from '../ui/Button'
 
 export function Header() {
@@ -62,11 +62,7 @@ export function Header() {
     <header className={`header ${scrolled ? 'header--scrolled' : ''} ${open ? 'header--open' : ''}`}>
       <div className="container header__bar">
         <Link to="/" className="brand" aria-label="Shanthi Nilayam, home">
-          <BrandMark />
-          <span className="brand__text">
-            <span className="brand__name">SHANTHI NILAYAM</span>
-            <span className="brand__desc">{site.descriptor}</span>
-          </span>
+          <BrandLogo />
         </Link>
 
         <nav className="nav" aria-label="Primary">

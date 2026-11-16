@@ -492,6 +492,9 @@
   max-width: 62ch;
   font-size: 1.08rem;
 }
+.cta__text + .cta__text {
+  margin-top: -1.2rem;
+}
 .cta--dark .cta__text {
   color: rgba(255, 249, 241, 0.78);
 }

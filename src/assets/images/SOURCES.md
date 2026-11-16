@@ -16,14 +16,14 @@ All photographs are royalty-free from Pexels (https://www.pexels.com), used unde
 | about/about-story.jpg | https://www.pexels.com/photo/18394079/ |
 | about/about-approach.jpg | https://www.pexels.com/photo/19811308/ |
 | about/about-families.jpg | https://www.pexels.com/photo/18533622/ |
-| services/service-residential.jpg | https://www.pexels.com/photo/8087554/ |
-| services/service-rehabilitation.jpg | https://www.pexels.com/photo/7551627/ |
-| services/service-physiotherapy.jpg | https://www.pexels.com/photo/6922113/ |
-| services/service-speech.jpg | https://www.pexels.com/photo/7232034/ |
-| services/service-occupational.jpg | https://www.pexels.com/photo/39811571/ |
-| services/service-adl.jpg | https://www.pexels.com/photo/8899469/ |
-| services/service-vocational.jpg | https://www.pexels.com/photo/36477312/ |
-| services/service-cbr.jpg | https://www.pexels.com/photo/36883131/ |
+| services/service-residential.jpg | https://www.pexels.com/photo/7943969/ |
+| services/service-rehabilitation.jpg | https://www.pexels.com/photo/4058375/ |
+| services/service-physiotherapy.jpg | https://www.pexels.com/photo/7698280/ |
+| services/service-speech.jpg | https://www.pexels.com/photo/7447262/ |
+| services/service-occupational.jpg | https://www.pexels.com/photo/30483024/ |
+| services/service-adl.jpg | https://www.pexels.com/photo/7055274/ |
+| services/service-vocational.jpg | https://www.pexels.com/photo/7698031/ |
+| services/service-cbr.jpg | https://www.pexels.com/photo/7162989/ |
 | facilities/facility-centre.jpg | https://www.pexels.com/photo/20427354/ |
 | facilities/facility-centre-2.jpg | https://www.pexels.com/photo/18459200/ |
 | facilities/facility-residential.jpg | https://www.pexels.com/photo/6916775/ |
@@ -53,3 +53,4 @@ All photographs are royalty-free from Pexels (https://www.pexels.com), used unde
 | gallery/gallery-journey-1.jpg | https://www.pexels.com/photo/17435473/ |
 | gallery/gallery-journey-2.jpg | https://www.pexels.com/photo/40450322/ |
 | contact/contact-welcome.jpg | https://www.pexels.com/photo/37145170/ |
+| services/services-hero.jpg | same image as about/about-approach.jpg (see that entry) |

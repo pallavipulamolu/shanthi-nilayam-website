@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
 interface Props {
-  eyebrow: string
+  eyebrow?: string
   title: ReactNode
   lede: ReactNode
   tone?: 'ivory' | 'beige'
@@ -17,9 +17,11 @@ export function PageHero({ eyebrow, title, lede, tone = 'ivory', variant, childr
       <div className="page-hero__deco" aria-hidden="true" />
       <div className="container page-hero__grid">
         <div className="page-hero__text">
-          <p className="eyebrow anim-in" style={{ '--i': 0 } as React.CSSProperties}>
-            {eyebrow}
-          </p>
+          {eyebrow && (
+            <p className="eyebrow anim-in" style={{ '--i': 0 } as React.CSSProperties}>
+              {eyebrow}
+            </p>
+          )}
           <h1 className="page-hero__title anim-in" style={{ '--i': 1 } as React.CSSProperties}>
             {title}
           </h1>

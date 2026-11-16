@@ -22,7 +22,6 @@ export interface Service {
   focus: string
   slot: PhotoSlot
   topic: EnquiryTopic
-  note?: string
 }
 
 export const services: Service[] = [
@@ -38,7 +37,6 @@ export const services: Service[] = [
       "To provide appropriate care and support in accordance with the centre's actual residential facilities, operating arrangements and individual care needs.",
     slot: 'service-residential',
     topic: 'residential',
-    note: 'Current residential arrangements and the admission process are confirmed directly with the centre.',
   },
   {
     id: 'rehabilitation',

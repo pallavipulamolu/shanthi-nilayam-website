@@ -9,9 +9,6 @@ import { Reveal } from '../components/ui/Reveal'
 import { Button } from '../components/ui/Button'
 import { CTASection } from '../components/ui/CTASection'
 
-const chipLabel = (name: string) =>
-  name.replace(' (ADL)', '').replace('Activities of Daily Living', 'Daily Living')
-
 export default function Services() {
   usePageMeta(
     'Rehabilitation and Support Services | Shanthi Nilayam',
@@ -22,29 +19,38 @@ export default function Services() {
       <PageHero
         variant="services"
         tone="beige"
-        eyebrow="What we offer"
         title="Our Services"
         lede={
           <>
-            <p className="lead">Every individual has unique needs, strengths and abilities.</p>
-            <p>
-              Appropriate support can help people develop functional skills, participate in everyday activities and
-              experience greater inclusion. Shanthi Nilayam's areas of service include care, rehabilitation,
-              therapy-related support, life-skills development and community-based initiatives.
+            <p className="lead">
+              Every individual has unique needs, strengths and abilities. Appropriate support can help people develop
+              functional skills, participate in everyday activities and experience greater inclusion.
             </p>
-            <p className="muted-small">
-              Availability and suitability depend on the centre's current programmes and the needs of each individual.
+            <p>
+              Shanthi Nilayam's areas of service include care, rehabilitation, therapy-related support, life-skills
+              development and community-based initiatives. Availability and suitability depend on the centre's current
+              programmes and the needs of each individual.
             </p>
           </>
         }
+        visual={
+          <div className="svc-hero-visual">
+            <Photo slot="services-hero" ratio="4 / 5" className="svc-hero-visual__photo" priority sizes="(min-width: 900px) 440px, 90vw" />
+          </div>
+        }
       >
         <nav className="svc-index" aria-label="Jump to a service">
-          {services.map((s) => (
-            <Link key={s.id} to={`/services#${s.id}`} className="chip">
-              <s.icon size={15} strokeWidth={1.7} aria-hidden="true" />
-              {chipLabel(s.name)}
-            </Link>
-          ))}
+          <ol>
+            {services.map((s, i) => (
+              <li key={s.id}>
+                <Link to={`/services#${s.id}`}>
+                  <span className="svc-index__n">{String(i + 1).padStart(2, '0')}</span>
+                  <s.icon size={16} strokeWidth={1.6} aria-hidden="true" />
+                  <span>{s.name}</span>
+                </Link>
+              </li>
+            ))}
+          </ol>
         </nav>
       </PageHero>
 
@@ -76,9 +82,8 @@ export default function Services() {
                   <h3>Our focus</h3>
                   <p>{s.focus}</p>
                 </div>
-                {s.note && <p className="muted-small">{s.note}</p>}
                 <Button to={enquiryLink(s.topic)} variant="secondary" size="sm">
-                  ENQUIRE ABOUT THIS SERVICE
+                  ENQUIRE ABOUT OUR SERVICES
                 </Button>
               </Reveal>
             </div>
@@ -90,11 +95,17 @@ export default function Services() {
         <div className="container">
           <Reveal className="disclaimer">
             <Info size={22} aria-hidden="true" />
-            <p>
-              <strong>Please note.</strong> This website provides general information. It does not guarantee admission,
-              treatment outcomes or the availability of a particular service. Confirm current availability directly
-              with the centre.
-            </p>
+            <div>
+              <p>
+                <strong>Service disclaimer:</strong> The website provides general information. It does not guarantee
+                admission, treatment outcomes or the availability of a particular service. Confirm current availability
+                directly with the centre.
+              </p>
+              <p className="muted-small">
+                Photographs on this page are representative royalty-free stock images (not of Indian beneficiaries specifically), and are not photographs of Shanthi Nilayam, its
+                residents, staff or facilities.
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -102,7 +113,10 @@ export default function Services() {
       <CTASection
         eyebrow="Seek information or support"
         title="Let Us Understand Your Enquiry"
-        text="If you are a family member, caregiver, institution or prospective partner, contact Shanthi Nilayam to enquire about the services currently available. Our team can provide information about the centre's actual programmes, eligibility or admission procedures, where applicable, and the next steps for an enquiry."
+        text={[
+          'If you are a family member, caregiver, institution or prospective partner, contact Shanthi Nilayam to enquire about the services currently available.',
+          "Our team can provide information about the centre's actual programmes, eligibility or admission procedures, where applicable, and the next steps for an enquiry.",
+        ]}
         cta={{ label: 'ENQUIRE ABOUT OUR SERVICES', to: enquiryLink('services') }}
       />
     </>

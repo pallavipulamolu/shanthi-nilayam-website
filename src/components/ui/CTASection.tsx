@@ -4,7 +4,8 @@ import { Reveal } from './Reveal'
 
 interface Props {
   title: ReactNode
-  text: ReactNode
+  /** A single paragraph, or several paragraphs. */
+  text: ReactNode | string[]
   cta: { label: string; to: string }
   secondary?: { label: string; to: string }
   eyebrow?: string
@@ -21,7 +22,15 @@ export function CTASection({ title, text, cta, secondary, eyebrow, tone = 'dark'
           <div className="cta__ring" aria-hidden="true" />
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
           <h2 className="cta__title">{title}</h2>
-          <p className="cta__text">{text}</p>
+          {Array.isArray(text) ? (
+            text.map((t) => (
+              <p key={t} className="cta__text">
+                {t}
+              </p>
+            ))
+          ) : (
+            <p className="cta__text">{text}</p>
+          )}
           <div className="cta__actions">
             <Button to={cta.to} variant={tone === 'dark' ? 'primary' : 'dark'}>
               {cta.label}

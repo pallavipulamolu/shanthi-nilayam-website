@@ -1,21 +1,16 @@
 import { Link } from 'react-router-dom'
 import { MapPin, Phone } from 'lucide-react'
 import { navItems, site } from '../../data/site'
-import { BrandMark } from './BrandMark'
+import { FooterLogo } from './BrandLogo'
 
 export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <div className="footer__logo">
-            <BrandMark size={48} />
-            <div>
-              <p className="footer__name">SHANTHI NILAYAM</p>
-              <p className="footer__desc">{site.descriptor}</p>
-            </div>
-          </div>
-          <p className="footer__tagline">{site.tagline.toUpperCase()}</p>
+          <FooterLogo />
+          <p className="footer__desc">{site.descriptor}</p>
+          <p className="footer__tagline sr-only">{site.tagline.toUpperCase()}</p>
         </div>
 
         <nav className="footer__col" aria-label="Footer">

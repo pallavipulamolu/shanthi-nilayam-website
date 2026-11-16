@@ -63,6 +63,7 @@ export const photoSlots = {
   'gallery-events-2': s('Celebration', 'Actual event photograph'),
   'gallery-journey-1': s('Historical photograph', 'Verified milestone since 2004'),
   'gallery-journey-2': s('From the archive', 'Verified milestone since 2004'),
+  'services-hero': s('Support at Shanthi Nilayam', 'Representative photograph of supportive, person-centred activity'),
   'contact-welcome': s('A warm welcome', 'Authentic, welcoming photograph of the centre'),
 } as const
 
@@ -83,14 +84,14 @@ const stockAlt: Record<PhotoSlot, string> = {
   'about-story': "An Indian grandfather and grandmother smiling with their grandchild",
   'about-approach': "An elderly Indian couple standing together, smiling, holding a flower",
   'about-families': "A grandmother and her granddaughter sharing a moment on a veranda",
-  'service-residential': "Two older women laughing together on a sofa in a comfortable living room",
-  'service-rehabilitation': "A senior man stretching his arms with a helper in a bright room",
-  'service-physiotherapy': "A smiling senior man doing floor exercises with a trainer",
-  'service-speech': "An older woman and a younger woman laughing together over a book",
-  'service-occupational': "An older man doing a hands-on activity with a helper at a table",
-  'service-adl': "A senior man making his own bed in a bright bedroom",
-  'service-vocational': "An older woman knitting with pink yarn",
-  'service-cbr': "Older women chatting warmly together at a community gathering",
+  'service-residential': "A mother and her daughter with Down syndrome playing a game together at home",
+  'service-rehabilitation': "A young woman with Down syndrome in a guided boxing session with a trainer, practising coordination and strength",
+  'service-physiotherapy': "A wheelchair user and a trainer working together at a pull-up frame in a rehabilitation gym",
+  'service-speech': "A therapist and a young girl sitting together on a sofa, sharing a communication activity",
+  'service-occupational': "Hands shaping red modelling clay during a practical therapy activity",
+  'service-adl': "A mother and daughter sitting on the floor sharing a snack, practising everyday routines",
+  'service-vocational': "An adult wheelchair user operating a coffee machine in a workplace, practising a job skill",
+  'service-cbr': "Three smiling colleagues at a cafe, including a man with Down syndrome and two wheelchair users, in an inclusive workplace",
   'facility-centre': "A residential building with a red roof, trees and a clear sky",
   'facility-centre-2': "Older residents seated together in a bright common room",
   'facility-residential': "Two older women looking at a book together on a bed in a bedroom",
@@ -119,6 +120,7 @@ const stockAlt: Record<PhotoSlot, string> = {
   'gallery-events-2': "An elderly Indian couple in flower garlands holding hands at a ceremony",
   'gallery-journey-1': "An elderly Indian couple in garlands cutting a celebration cake",
   'gallery-journey-2': "An elderly woman in a green sari among decorated festival pots",
+  'services-hero': "An elderly Indian couple smiling together, holding a red flower in a garden",
   'contact-welcome': "A smiling elderly Indian woman in a blue headscarf, welcoming and warm",
 }
 
