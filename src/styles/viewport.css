@@ -1,0 +1,336 @@
+/* ---------- Viewport-aware desktop layout ----------
+   On desktop-sized screens every major section is sized from the viewport
+   height so it can be read without extra scrolling. Mobile and short windows
+   keep the natural, scrollable layout. */
+@media (min-width: 960px) and (min-height: 560px) {
+  :root {
+    --header-h: clamp(80px, 10.5svh, 100px);
+    --section-y: clamp(28px, 6svh, 72px);
+    --fit: calc(100svh - var(--header-h));
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Typography scales with the screen height as well as its width */
+  .sh__title {
+    font-size: clamp(1.85rem, min(3.3vw, 5.4svh), 3.1rem);
+  }
+  .lead {
+    font-size: clamp(1.02rem, min(1.4vw, 2.5svh), 1.2rem);
+    line-height: 1.55;
+  }
+  .sh--center {
+    margin-bottom: clamp(20px, 4svh, 48px);
+  }
+  .sh__lede {
+    margin-top: 0.8rem;
+  }
+
+  /* Photographs never grow taller than the space a section has */
+  .section .photo,
+  .page-hero .photo {
+    max-height: calc(var(--fit) - 2 * var(--section-y) - 12px);
+  }
+
+  /* Home hero */
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding-top: calc(var(--header-h) + 2svh);
+    padding-bottom: clamp(24px, 5svh, 56px);
+  }
+  .hero > .container {
+    width: min(var(--container), 100% - 2 * var(--gutter));
+  }
+  .hero__grid {
+    gap: clamp(32px, 5vw, 72px);
+  }
+  .hero__title {
+    font-size: clamp(2.2rem, min(4.3vw, 7.2svh), 3.9rem);
+  }
+  .hero__lede {
+    margin-top: clamp(0.8rem, 2svh, 1.4rem);
+    font-size: clamp(1rem, min(1.3vw, 2.4svh), 1.16rem);
+    line-height: 1.55;
+  }
+  .hero__sub {
+    font-size: 0.96rem;
+  }
+  .hero__actions {
+    margin-top: clamp(1rem, 2.6svh, 1.8rem);
+  }
+  .hero__quote {
+    margin-top: clamp(1rem, 2.6svh, 1.8rem);
+    font-size: 1rem;
+  }
+  .hero__visual {
+    width: min(100%, 520px, calc((var(--fit) - 8svh) / 1.24));
+  }
+
+  /* Page heroes */
+  .page-hero {
+    padding-top: calc(var(--header-h) + clamp(16px, 4svh, 48px));
+    padding-bottom: clamp(24px, 6svh, 64px);
+  }
+  .page-hero__title {
+    font-size: clamp(2.2rem, min(5vw, 8.6svh), 4.2rem);
+  }
+  .page-hero__lede {
+    margin-top: clamp(0.8rem, 2svh, 1.4rem);
+  }
+  .page-hero__extra {
+    margin-top: clamp(1rem, 2.6svh, 1.8rem);
+  }
+
+  /* Split layouts */
+  .split {
+    gap: clamp(28px, 5vw, 72px);
+  }
+
+  /* CTA band */
+  .cta {
+    padding-block: clamp(24px, 4svh, 48px) clamp(32px, 6svh, 64px);
+  }
+  .cta__inner {
+    padding: clamp(28px, 6svh, 64px) clamp(24px, 6vw, 80px);
+  }
+
+  /* Body copy: slightly tighter on shorter screens, never below a readable size */
+  :where(.section) p,
+  :where(.cta) p {
+    font-size: clamp(0.92rem, 2.1svh, 1rem);
+    line-height: 1.55;
+  }
+  :where(.section) p + p {
+    margin-top: 0.8em;
+  }
+
+  /* Introduction: narrower photo column so the copy can use the width */
+  .intro .split {
+    grid-template-columns: 0.78fr 1.22fr;
+  }
+  .intro__images {
+    max-width: min(100%, 440px, calc((var(--fit) - 2 * var(--section-y)) * 0.74));
+  }
+  .intro__stamp {
+    width: clamp(88px, 12svh, 112px);
+    font-size: 0.86rem;
+  }
+  .pullquote {
+    margin: clamp(0.8rem, 2svh, 1.4rem) 0 clamp(1rem, 2.4svh, 1.6rem) !important;
+    font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  }
+
+  /* Home: services preview cards */
+  .svc-card {
+    min-height: 0;
+    padding: clamp(16px, 3svh, 28px) 24px clamp(16px, 3svh, 26px);
+  }
+  .svc-card__icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: clamp(10px, 2svh, 18px);
+  }
+  .svc-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+  .svc-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .svc-grid {
+    gap: clamp(12px, 2svh, 20px);
+  }
+
+  /* Journey and timeline */
+  .journey__grid {
+    margin-top: clamp(16px, 3svh, 36px);
+  }
+  .timeline {
+    margin-top: clamp(24px, 5svh, 64px);
+    gap: 20px;
+  }
+
+  /* Support mission panel */
+  .support {
+    padding-block: clamp(20px, 4svh, 48px);
+  }
+  .support__panel {
+    padding: clamp(24px, 5svh, 64px) clamp(24px, 5vw, 64px);
+    gap: clamp(24px, 4vw, 56px);
+  }
+  .support__who li {
+    padding: clamp(12px, 2svh, 18px) 20px;
+  }
+  .support__line {
+    margin-top: clamp(1rem, 2.4svh, 1.6rem);
+  }
+
+  /* About: values grid */
+  .value {
+    padding: clamp(16px, 3svh, 30px) 26px clamp(16px, 3svh, 28px);
+  }
+  .value > svg {
+    margin-bottom: clamp(8px, 1.8svh, 16px);
+  }
+  .values {
+    gap: clamp(12px, 2.4svh, 20px);
+  }
+
+  /* Facilities */
+  .fac-centre__wide {
+    margin-top: 0;
+  }
+  .fac-centre__grid {
+    gap: clamp(16px, 3svh, 32px) clamp(24px, 4vw, 48px);
+  }
+  .fac-res {
+    margin-top: clamp(16px, 3svh, 36px);
+    gap: clamp(16px, 3svh, 28px);
+  }
+  .fac-res__b {
+    margin-top: 0;
+  }
+  .fac-activity {
+    margin-top: clamp(16px, 3svh, 36px);
+  }
+  .fac-safety__list {
+    padding: clamp(18px, 3.4svh, 36px);
+  }
+  .fac-safety__list li {
+    padding-block: clamp(7px, 1.4svh, 12px);
+  }
+
+  /* Outreach impact cards */
+  .impact__grid {
+    margin-top: clamp(20px, 3.6svh, 44px);
+    gap: clamp(10px, 2svh, 18px);
+  }
+  .impact__item {
+    padding: clamp(14px, 2.6svh, 26px) 24px clamp(12px, 2.2svh, 22px);
+  }
+  .impact__figure {
+    font-size: clamp(2.4rem, 6svh, 3.4rem);
+  }
+  .impact__note {
+    margin-top: clamp(14px, 2.6svh, 26px);
+  }
+
+  /* Contact */
+  .contact {
+    padding-top: clamp(24px, 4svh, 56px);
+  }
+  .contact__grid {
+    gap: clamp(24px, 4vw, 56px);
+  }
+  .contact__org {
+    font-size: clamp(1.4rem, min(2.2vw, 4svh), 1.9rem);
+    margin-bottom: clamp(12px, 2.4svh, 22px);
+  }
+  .info-cards {
+    gap: clamp(8px, 1.6svh, 14px);
+  }
+  .info-cards li {
+    padding: clamp(12px, 2.2svh, 20px) 22px;
+  }
+  .contact__form {
+    padding: clamp(18px, 3.6svh, 44px) clamp(24px, 3.4vw, 48px);
+  }
+  .contact__form h2 {
+    font-size: clamp(1.6rem, min(2.6vw, 4.6svh), 2.2rem);
+    margin-bottom: 8px;
+  }
+  .contact__form-lede {
+    margin-bottom: clamp(12px, 2.4svh, 24px);
+  }
+  .form {
+    gap: clamp(12px, 2.2svh, 20px);
+  }
+  .field label {
+    margin-bottom: 5px;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    padding-block: clamp(9px, 1.7svh, 14px);
+  }
+  .field textarea {
+    min-height: clamp(84px, 14svh, 130px);
+  }
+  .directions__grid {
+    gap: clamp(24px, 4vw, 56px);
+  }
+
+  .fac-centre__narrow .photo {
+    max-height: clamp(150px, 26svh, 280px);
+  }
+  .fac-centre__wide .photo {
+    max-height: clamp(260px, 48svh, 520px);
+  }
+  .fac-activity .photo,
+  .fac-res .photo {
+    max-height: clamp(180px, 36svh, 380px);
+  }
+
+  .section__head-row {
+    margin-bottom: clamp(16px, 3.4svh, 40px);
+    gap: 16px 40px;
+  }
+  .section__head-row .sh {
+    max-width: 880px;
+  }
+  .section__head-row .sh__title {
+    max-width: 30ch;
+  }
+  .journey .photo {
+    max-height: clamp(200px, 34svh, 360px);
+  }
+  .outreach-preview__photo .photo {
+    max-height: clamp(280px, 52svh, 520px);
+  }
+  .timeline__node {
+    padding-top: 38px;
+  }
+
+  .sh__title {
+    font-size: clamp(1.8rem, min(3.1vw, 5svh), 2.9rem);
+  }
+  .section__head-row .sh__lede,
+  .sh--left .sh__lede {
+    margin-top: 0.5rem;
+  }
+  .svc-card p {
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+  .svc-card {
+    padding: clamp(14px, 2.4svh, 24px) 22px clamp(14px, 2.2svh, 22px);
+  }
+  .outreach-preview .split {
+    grid-template-columns: 0.7fr 1.3fr;
+  }
+  .value {
+    padding: clamp(14px, 2.4svh, 26px) 24px clamp(14px, 2.4svh, 24px);
+  }
+  .value p {
+    font-size: 0.88rem;
+  }
+  .value h3 {
+    margin-bottom: 6px;
+  }
+  .impact__item {
+    padding: clamp(12px, 2.2svh, 22px) 22px clamp(10px, 1.8svh, 18px);
+  }
+  .field textarea {
+    min-height: clamp(70px, 11svh, 120px);
+  }
+}
+
+/* Sections that are scrolled or linked to stop just below the sticky header */
+main section,
+main .cta {
+  scroll-margin-top: var(--header-h);
+}
